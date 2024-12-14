@@ -9,7 +9,7 @@ const nonVeg = [
   { id: '4', name: 'Wheat', brand: 'Premium Brand', price: 40, image: require('../assets/icon.png') },
 ];
 
-export default function NonVegScreen() {
+export default function NonVegScreen({addToCart}) {
   return (
        <View style={styles.container}>
                <FlatList

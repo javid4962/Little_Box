@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, Dimensions, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const HeaderCart = ({ cartVisible, toggleCart, cartItems, setCartItems }) => {
@@ -39,7 +39,9 @@ const HeaderCart = ({ cartVisible, toggleCart, cartItems, setCartItems }) => {
                   <View style={styles.cartItem}>
                     <View style={styles.itemDetails}>
                      
-                      <Text style={styles.cartItemText}>{++count + ') '}{item.name}</Text>
+                      <Text style={styles.cartItemText}>{++count + ') '}
+                      <Image source={item.image} style={styles.image} />
+                        {item.name}  </Text>
                       <Text style={styles.cartItemPrice}>₹{item.price}</Text>
                     </View>
                     <TouchableOpacity onPress={() => removeItem(index)} style={styles.removeButton}>
@@ -111,6 +113,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
   },
+  image: { width: '30%', height: 75, borderRadius: 8 },
   itemDetails: {
     flexDirection: 'column',
     flex: 1,

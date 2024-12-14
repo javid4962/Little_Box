@@ -9,10 +9,10 @@ const veg = [
   { id: '4', name: 'Wheat', brand: 'Premium Brand', price: 40, image: require('../assets/icon.png') },
 ];
 
-export default function VegScreen() {
+export default function VegScreen({addToCart}) {
   return (
       <View style={styles.container}>
-              <FlatList
+        ~      <FlatList
                   data={veg}
                   keyExtractor={(item) => item.id}
                   renderItem={({ item }) => (
